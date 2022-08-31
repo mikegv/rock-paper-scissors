@@ -1,16 +1,26 @@
 .resultScreen{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .resultScreen span{
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
-    background-color: lightgray;
+    background-color: rgb(34, 30, 59);
+}
+.resultScreen h3{
+    transform: translateY(-10rem);
+}
+.resultScreen div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-p{
-    color: black;
+.resultScreen p{
+    font-size: 4rem;
+    margin: 0rem 10rem;
 }

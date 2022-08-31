@@ -1,6 +1,7 @@
 import ImageIcon from "./ImageIcon";
 import { useState, useEffect } from "react";
 import "./result.css";
+import PlayAgainButton from "./PlayAgainButton";
 
 const Result = ({ playerHand }) => {
   const hands = [
@@ -11,7 +12,7 @@ const Result = ({ playerHand }) => {
     { paper: "blue" },
   ];
   const [cpu, setCpu] = useState(null);
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState('');
   let key;
   let value;
   useEffect(() => {
@@ -58,7 +59,7 @@ const Result = ({ playerHand }) => {
           default:
             break;
         }
-        setResult(outcome);
+        setResult(`You ${outcome}`);
       }, 2000);
       return () => {
         clearTimeout(resultTimer);
@@ -71,13 +72,22 @@ const Result = ({ playerHand }) => {
   }
   return (
     <div className="resultScreen">
+      <div>
+        <h3>You Picked</h3>
       <ImageIcon color={playerHand[1]} symbol={playerHand[0]} result="true" />
+      </div>
+      <div>
       <p>{result}</p>
+      {result !== '' && <PlayAgainButton />}
+      </div>
+      <div>
+        <h3>House Picked</h3>
       {cpu !== null ? (
         <ImageIcon color={value} symbol={key} result="true" />
       ) : (
         <span></span>
       )}
+      </div>
     </div>
   );
 };
