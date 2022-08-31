@@ -1,0 +1,21 @@
+.scoreArea{
+    background-color: white;
+    height: 7.5rem;
+    width: 7.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.scoreArea > p {
+    color: hsl(229, 64%, 46%);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.scoreArea > span{
+    font-size: 3rem;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+}
