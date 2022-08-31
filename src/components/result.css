@@ -1,0 +1,16 @@
+.resultScreen{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.resultScreen span{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: lightgray;
+}
+
+p{
+    color: black;
+}

@@ -5,8 +5,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 17rem 17rem;
-    
     position: relative;
+    transform: translateY(-15%);
   }
 
 .resultScreen{
