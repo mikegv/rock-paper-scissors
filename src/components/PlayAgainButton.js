@@ -1,8 +1,8 @@
 import './playAgainButton.css'
 
-const PlayAgainButton = () => {
+const PlayAgainButton = ({playAgain}) => {
     return (
-        <button className='playAgainButton' onClick={()=>window.location.reload(false)}>Play Again</button>
+        <button className='playAgainButton' onClick={()=>playAgain()}>Play Again</button>
     );
 };
 

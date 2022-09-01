@@ -3,10 +3,13 @@ import ImageIcon from "./ImageIcon";
 import { useState } from 'react'
 import Result from "./Result";
 
-const GameArea = () => {
+const GameArea = ({updateScore}) => {
   const [playerHand, setPlayerHand] = useState(null)
   const imageClickHandler = (hand, color) => {
     setPlayerHand([hand, color])
+  }
+  const reset = () => {
+    setPlayerHand(null)
   }
   if(!playerHand){
   return (
@@ -20,7 +23,7 @@ const GameArea = () => {
   );
   }else{
     return(
-      <Result playerHand={playerHand} />
+      <Result playerHand={playerHand} updateScore={updateScore} reset={reset} />
     )
   }
 };

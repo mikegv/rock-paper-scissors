@@ -1,9 +1,12 @@
 .imageIcon{
     border-radius: 50%;
-    width: fit-content;
+    width: 7.5rem;
+    height: 7.5rem;
     padding: .6rem;
     background-color: white;
-   
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .selectingHand{

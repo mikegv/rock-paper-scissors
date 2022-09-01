@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./result.css";
 import PlayAgainButton from "./PlayAgainButton";
 
-const Result = ({ playerHand }) => {
+const Result = ({ playerHand, updateScore, reset }) => {
   const hands = [
     { rock: "red" },
     { lizard: "purple" },
@@ -60,6 +60,11 @@ const Result = ({ playerHand }) => {
             break;
         }
         setResult(`You ${outcome}`);
+        if(outcome === 'win'){
+          updateScore(true)
+        }else{
+          updateScore(false)
+        }
       }, 2000);
       return () => {
         clearTimeout(resultTimer);
@@ -70,6 +75,12 @@ const Result = ({ playerHand }) => {
     key = Object.keys(hands[cpu])[0];
     value = hands[cpu][key];
   }
+  const playAgain = () => {
+    setCpu(null)
+    setResult('')
+    reset()
+  }
+
   return (
     <div className="resultScreen">
       <div>
@@ -78,7 +89,7 @@ const Result = ({ playerHand }) => {
       </div>
       <div>
       <p>{result}</p>
-      {result !== '' && <PlayAgainButton />}
+      {result !== '' && <PlayAgainButton playAgain={playAgain} />}
       </div>
       <div>
         <h3>House Picked</h3>

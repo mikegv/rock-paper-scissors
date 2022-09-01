@@ -1,9 +1,9 @@
 import './scoreArea.css'
-const ScoreArea = () => {
+const ScoreArea = ({score}) => {
     return (
         <div className='scoreArea'>
             <p>Score</p>
-            <span>12</span>
+            <span>{score}</span>
         </div>
     );
 };

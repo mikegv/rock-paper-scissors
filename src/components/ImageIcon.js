@@ -1,7 +1,7 @@
 import './imageIcon.css'
 const ImageIcon = ({color, symbol, imageClickHandler, result}) => {
     const borderStyle={
-        border: `solid 15px ${color}`
+        border: `solid 16px ${color}`
 
     }
     let classes = result ? 'imageIcon' : 'imageIcon selectingHand';
