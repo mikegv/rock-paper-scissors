@@ -1,8 +1,9 @@
 import './rulesButton.css'
+import { useState } from 'react'
 
-const RulesButton = () => {
+const RulesButton = ({showRules}) => {
     return (
-        <button className='rulesButton'>Rules</button>
+        <button className='rulesButton' onClick={()=>showRules()}>Rules</button>
     );
 };
 
